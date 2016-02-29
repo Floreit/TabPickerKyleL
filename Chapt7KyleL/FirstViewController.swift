@@ -10,6 +10,20 @@ import UIKit
 
 class FirstViewController: UIViewController {
 
+    @IBOutlet weak var DatePicker: UIDatePicker!
+    @IBOutlet weak var selectedDate: UILabel!
+  
+    
+    @IBAction func datePickerAction(sender: AnyObject) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
+        let strDate = dateFormatter.stringFromDate(DatePicker.date)
+        self.selectedDate.text = strDate
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
